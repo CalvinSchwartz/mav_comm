@@ -32,8 +32,4 @@
   <depend>trajectory_msgs</depend>
   <depend>message_runtime</depend>
   
-<export>
-  <build_type>ament_cmake</build_type>
-</export>
-
 </package>
