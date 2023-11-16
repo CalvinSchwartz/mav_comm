@@ -1,6 +1,11 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Changelog for package mav_comm
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3.4.0 (2023-11-16)
+------------------
+* Push to ROS2
+* Replace catkin_metapackage() by ament_package (unsupported in ROS2)
+
 3.3.3 (2019-08-16)
 ------------------
 * Add 6DOF trajectory compatibility.

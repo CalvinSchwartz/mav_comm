@@ -1,6 +1,12 @@
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Changelog for package mav_planning_msgs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+3.4.0 (2023-11-16)
+------------------
+* Push to ROS2
+* Remove depreceated <message_runtime> dependency
+* Rename polynomial_plan_4D to polynomial_plan_4d
+
 3.3.3 (2019-08-16)
 ------------------
 * Add PolynomialSegment/Trajectory messages with 3D rotation vector.

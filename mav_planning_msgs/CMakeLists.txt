@@ -10,7 +10,7 @@ find_package(mav_msgs REQUIRED)
 find_package(trajectory_msgs REQUIRED)
 
 find_package(Eigen3 QUIET)
-set(CMAKE_CXX_STANDARD 1 4)
+set(CMAKE_CXX_STANDARD 14)
 rosidl_generate_interfaces(
     ${PROJECT_NAME}
         srv/PlannerService.srv
@@ -33,14 +33,5 @@ rosidl_generate_interfaces(
 include_directories(include)
 
 ament_export_include_directories(include ${EIGEN3_INCLUDE_DIRS})
-ament_export_dependencies(message_runtime geometry_msgs sensor_msgs std_msgs mav_msgs trajectory_msgs)
+ament_export_dependencies(geometry_msgs sensor_msgs std_msgs mav_msgs trajectory_msgs)
 ament_package()
-if(NOT EIGEN3_FOUND)
-  # ROS == Indigo.
-  find_package(cmake_modules REQUIRED)
-  find_package(Eigen REQUIRED)
-  set(EIGEN3_INCLUDE_DIRS ${EIGEN_INCLUDE_DIRS})
-  # ROS > Indigo.
-  set(EIGEN3_INCLUDE_DIRS ${EIGEN3_INCLUDE_DIR})
-else()
-endif()

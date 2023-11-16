@@ -3,12 +3,13 @@ project(mav_msgs)
 
 find_package(rosidl_default_generators REQUIRED)
 find_package(ament_cmake REQUIRED)
+find_package(geometry_msgs)
 
 find_package(Eigen3)
-set(CMAKE_CXX_STANDARD 1 4)
+set(CMAKE_CXX_STANDARD 14)
 set(EIGEN3_INCLUDE_DIRS ${EIGEN3_INCLUDE_DIR})
 
-add_definitions(-std=c++11)
+add_definitions(-std=c++14)
 rosidl_generate_interfaces(
     ${PROJECT_NAME}
         msg/Status.msg
@@ -25,7 +26,7 @@ rosidl_generate_interfaces(
 include_directories(include)
 
 ament_export_include_directories(include ${EIGEN3_INCLUDE_DIRS})
-ament_export_dependencies(message_runtime std_msgs geometry_msgs trajectory_msgs nav_msgs)
+ament_export_dependencies(std_msgs geometry_msgs trajectory_msgs nav_msgs)
 ament_package()
 
 install(
