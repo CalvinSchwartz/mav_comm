@@ -1,33 +1,32 @@
-cmake_minimum_required(VERSION 2.8.3)
+cmake_minimum_required(VERSION 3.5)
 project(mav_msgs)
 
-find_package(catkin REQUIRED message_generation std_msgs geometry_msgs trajectory_msgs nav_msgs)
-include_directories(include ${catkin_INCLUDE_DIRS})
+find_package(rosidl_default_generators REQUIRED)
+find_package(ament_cmake REQUIRED)
 
 find_package(Eigen3)
+set(CMAKE_CXX_STANDARD 1 4)
 set(EIGEN3_INCLUDE_DIRS ${EIGEN3_INCLUDE_DIR})
 
 add_definitions(-std=c++11)
-
-add_message_files(
-  FILES
-  Actuators.msg
-  AttitudeThrust.msg
-  RateThrust.msg
-  RollPitchYawrateThrust.msg
-  TorqueThrust.msg
-  Status.msg
-  FilteredSensorData.msg
-  GpsWaypoint.msg
+rosidl_generate_interfaces(
+    ${PROJECT_NAME}
+        msg/Status.msg
+        msg/TorqueThrust.msg
+        msg/GpsWaypoint.msg
+        msg/AttitudeThrust.msg
+        msg/RateThrust.msg
+        msg/FilteredSensorData.msg
+        msg/Actuators.msg
+        msg/RollPitchYawrateThrust.msg
+    DEPENDENCIES
+        geometry_msgs
 )
+include_directories(include)
 
-generate_messages(DEPENDENCIES std_msgs geometry_msgs nav_msgs)
-
-catkin_package(
-  INCLUDE_DIRS include ${EIGEN3_INCLUDE_DIRS}
-  CATKIN_DEPENDS message_runtime std_msgs geometry_msgs trajectory_msgs nav_msgs
-  CFG_EXTRAS export_flags.cmake
-)
+ament_export_include_directories(include ${EIGEN3_INCLUDE_DIRS})
+ament_export_dependencies(message_runtime std_msgs geometry_msgs trajectory_msgs nav_msgs)
+ament_package()
 
 install(
   DIRECTORY include/${PROJECT_NAME}/

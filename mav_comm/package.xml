@@ -22,7 +22,7 @@
   <url type="bugtracker">https://github.com/ethz-asl/mav_comm/issues</url>
 
   <!-- Dependencies which this package needs to build itself. -->
-  <buildtool_depend>catkin</buildtool_depend>
+  <buildtool_depend>ament_cmake</buildtool_depend>
 
   <!-- Dependencies needed after this package is compiled. -->
   <depend>mav_msgs</depend>
@@ -30,5 +30,8 @@
   <depend>mav_state_machine_msgs</depend>
   <depend>mav_system_msgs</depend>
   <depend>message_runtime</depend>
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
 
 </package>

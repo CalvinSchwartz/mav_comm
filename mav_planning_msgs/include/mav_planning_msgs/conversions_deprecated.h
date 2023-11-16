@@ -19,9 +19,9 @@
 #ifndef MAV_PLANNING_MSGS_CONVERSIONS_DEPRECATED_H
 #define MAV_PLANNING_MSGS_CONVERSIONS_DEPRECATED_H
 
-#include <geometry_msgs/Point.h>
-#include <geometry_msgs/Quaternion.h>
-#include <geometry_msgs/Vector3.h>
+#include <geometry_msgs/msg/point.hpp>
+#include <geometry_msgs/msg/quaternion.hpp>
+#include <geometry_msgs/msg/vector3.hpp>
 
 #include "mav_planning_msgs/PolynomialSegment4D.h"
 #include "mav_planning_msgs/PolynomialTrajectory4D.h"
