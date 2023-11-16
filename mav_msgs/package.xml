@@ -1,4 +1,4 @@
-<package>
+<package format="2">
   <name>mav_msgs</name>
   <version>3.3.3</version>
   <description>Package containing messages for communicating with rotary wing MAVs</description>
@@ -23,19 +23,17 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
-  <build_depend>cmake_modules</build_depend>
-  <build_depend>eigen</build_depend>
-  <build_depend>geometry_msgs</build_depend>
-  <build_depend>message_generation</build_depend>
-  <build_depend>nav_msgs</build_depend>
-  <build_depend>std_msgs</build_depend>
-  <build_depend>trajectory_msgs</build_depend>
+  <depend>cmake_modules</depend>
+  <depend>eigen</depend>
+  <depend>geometry_msgs</depend>
+  <depend>message_generation</depend>
+  <depend>nav_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>trajectory_msgs</depend>
+  <depend>message_runtime</depend>
   
-  <run_depend>eigen</run_depend>
-  <run_depend>geometry_msgs</run_depend>
-  <run_depend>message_runtime</run_depend>
-  <run_depend>nav_msgs</run_depend>
-  <run_depend>std_msgs</run_depend>
-  <run_depend>trajectory_msgs</run_depend>
+<export>
+  <build_type>ament_cmake</build_type>
+</export>
 
 </package>

@@ -1,4 +1,4 @@
-<package>
+<package format="2">
   <name>mav_comm</name>
   <version>3.3.3</version>
   <description>Contains messages and services for MAV communication</description>
@@ -25,12 +25,10 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <!-- Dependencies needed after this package is compiled. -->
-  <run_depend>mav_msgs</run_depend>
-  <run_depend>mav_planning_msgs</run_depend>
-  <run_depend>mav_state_machine_msgs</run_depend>
-  <run_depend>mav_system_msgs</run_depend>
+  <depend>mav_msgs</depend>
+  <depend>mav_planning_msgs</depend>
+  <depend>mav_state_machine_msgs</depend>
+  <depend>mav_system_msgs</depend>
+  <depend>message_runtime</depend>
 
-  <export>
-    <metapackage/>
-  </export>
 </package>
